@@ -1,0 +1,134 @@
+//if you add cards in html you just have to change these numbers to make it work, add some text to this comment to refresh scss// 
+
+$number-of-single: 5; // single fill-in-the-blank
+$number-of-double: 5; // double fill-in-the-blank
+$number-of-white: 20;
+
+///////////////////////////////////////////////////////
+$single-or-double: random(2);
+$how-many-white: $single-or-double;
+@if ($single-or-double == 1) {
+	$single-or-double: '.s' + random($number-of-single);
+}
+@else {
+	$single-or-double: '.d' + random($number-of-double);
+}
+
+body{
+	margin:0;
+}
+
+.background{
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, white, lightgray, white);
+}
+
+.cards-container{
+	text-align:center;
+	width:100%;
+	height:240px;
+	background-image: url(https://images.pexels.com/photos/172289/pexels-photo-172289.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
+	background-size:cover;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin:auto;
+
+	.title{
+    color: white;
+    font-family:arial;
+		font-weight:800;
+		text-align:left;
+    font-size:30px;
+		line-height:30px;
+    z-index:2;
+	}
+
+	.card{
+		position: absolute;
+		top:-1500px;
+    width:170px;
+	  height:240px;
+	  border-radius:15px;
+		text-align:left;
+		padding:15px;
+    font-family:arial;
+    font-size:15px;
+		line-height:20px;
+	}
+	.bc{
+	  background-color: black;
+		color:white;
+	}	
+	.wc{
+	  background-color: white;
+		color:black;
+		display:inline-block;
+	}	
+$first-white-card:".none";
+$second-white-card:".none";
+@if ($how-many-white == 1) {
+	$first-white-card: '.w' + random($number-of-white);
+}
+@else {
+	$temp1: random($number-of-white);
+  $temp2: $temp1 + random($number-of-white - 1);
+  $first-white-card: '.w' + $temp1;
+	$second-white-card: '.w' + $temp2;
+}
+
+	@for $i from 1 through $number-of-white*2 {
+		.w#{$i}{	
+      display:none;
+    }
+  }
+	@for $i from 1 through $number-of-single {
+		.s#{$i}{	
+      display:none;
+    }
+  }
+	@for $i from 1 through $number-of-double {
+		.d#{$i}{	
+      display:none;
+    }
+  }
+
+@keyframes bc {
+  from {transform:translate(0px, 00px)  scale(2) rotate(-800deg); box-shadow:-5px 5px 20px rgba(0,0,0,.5);}
+  to {transform:translate(-180px, 1500+20px) scale(1) rotate(-12deg); box-shadow:0px 0px 20px rgba(0,0,0,.2);}
+}
+	#{$single-or-double}{
+		display: inline-block;
+		margin:#{$how-many-white}px;
+		transition-timing-function: cubic-bezier(0,0,0.80,1);
+		animation: bc 1s forwards;
+		animation-delay: .6s;
+	}
+
+@keyframes wc1 {
+  from {transform:translate(0px, 00px)  scale(2) rotate(-800deg); box-shadow:-5px 5px 20px rgba(0,0,0,.5);}
+  to {transform:translate(-15px, 1500-52px) scale(1) rotate(4deg); box-shadow:0px 0px 20px rgba(0,0,0,.2);}
+}
+	#{$first-white-card}{
+	  display: inline-block;
+		transition-timing-function: cubic-bezier(0,0,0.80,1);
+		animation: wc1 1s forwards;
+		animation-delay: .3s;
+	}
+
+@keyframes wc2 {
+  from {transform:translate(0px, 00px)  scale(2) rotate(-800deg); box-shadow:-5px 5px 20px rgba(0,0,0,.5);}
+  to {transform:translate(15px, 1500+40px) scale(1) rotate(12deg); box-shadow:0px 0px 20px rgba(0,0,0,.2);}
+}
+	#{$second-white-card}{
+	  display: inline-block;
+		transition-timing-function: cubic-bezier(0,0,0.80,1);
+		animation: wc2 1s forwards;
+	}
+}
+

@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <style>
+        body {
+          background-color: #000104;
+        }
+
+        h1 {
+        color: white;
+        }
+        </style>
+    <title>Choose a question</title>
+</head>
+<body>
+    <h1>Choose a card</h1>
+    <div class='cardContainer'>
+        <div class='darkcard'>
+          <p class='text'>{{ request.session.blcard }}</p>
+        </div>
+      
+        <div class='lightcard'>
+          <p class='text'>The total collapse of the global financial system.</p>
+        </div>
+        
+        <div class='cardstack'>
+            {% for whiteCard in whiteCardArr %}
+          <div class='light stackcard'>
+            <ul class='text menu'>
+              <li>{{ whiteCard.answer }}</li>
+            </ul>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+</body>
+</html>

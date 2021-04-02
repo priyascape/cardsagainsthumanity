@@ -1,0 +1,187 @@
+@import 'https://fonts.googleapis.com/css?family=Droid+Sans+Mono';
+
+body{
+  background-color:black;
+}
+
+.cardContainer{
+  overflow:hidden;
+  margin-left:10%;
+}
+
+.darkcard{
+  /* Card Sizing */
+  width: 2.5in;
+  height: 4in;
+  border-radius: .25in;
+  float: left;
+  margin: 10px;
+  color: white;
+  background: black;
+}
+
+.lightcard{
+    /* Card Sizing */
+    width: 2.5in;
+    height: 4in;
+    border-radius: .25in;
+    float: left;
+    margin: 10px;
+    color: black;
+    background: white;
+  }
+
+.dark{
+  /* Color information */
+  border: 3px solid black;
+  color: white;
+  background: black;
+}
+
+.light{
+  /* Color information */
+  border: 3px solid black;
+  color: black;
+  background: white;
+}
+
+.text{
+  /*font information*/
+  font-family: Helvetica,sans-serif;
+  font-weight: bolder;
+  font-size: 26px;
+  padding-left:7%;
+  padding-right:7%;
+  word-wrap: break-word;
+}
+
+.subtext{
+  /*font information*/
+  font-family: Helvetica,sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  padding-left:7%;
+  padding-right:7%;
+  word-wrap: break-word;
+}
+
+.menu{
+  list-style-type: none;
+}
+
+.menu li:hover{
+  color: #d9d9d9;
+}
+
+.cardstack{
+  width:2.5in;
+  float:left;
+}
+
+.stackcard{
+  /* Card Sizing */
+  width: 2.5in;
+  height: 4in;
+  border-radius: .25in;
+  
+  /* Display Properties */
+  position:absolute;
+  margin: 10px;
+}
+
+.stackcard:nth-child(2){
+  margin: 10px;
+  margin-top: 80px;
+  transition: all 250ms ease-in-out;
+}
+
+.stackcard:nth-child(2):hover{
+    margin: 10px;
+  }
+
+.stackcard:nth-child(3){
+  margin: 10px;
+  margin-top: 150px;
+  transition: all 250ms ease-in-out;
+}
+
+.stackcard:nth-child(3):hover{
+    margin: 10px;
+    margin-top: 80px;
+  }
+
+.stackcard:nth-child(4){
+  margin: 10px;
+  margin-top: 220px;
+  transition: all 250ms ease-in-out;
+}
+
+.stackcard:nth-child(4):hover{
+    margin: 10px;
+    margin-top: 150px;
+}
+
+.stackcard:nth-child(5){
+    margin: 10px;
+    margin-top: 290px;
+    transition: all 250ms ease-in-out;
+  }
+
+.stackcard:nth-child(5):hover{
+    margin: 10px;
+    margin-top: 220px;
+}
+
+  .stackcard:nth-child(6){
+    margin: 10px;
+    margin-top: 360px;
+    transition: all 250ms ease-in-out;
+  }
+
+.stackcard:nth-child(6):hover{
+    margin: 10px;
+    margin-top: 290px;
+}
+
+  .stackcard:nth-child(7){
+    margin: 10px;
+    margin-top: 430px;
+    transition: all 250ms ease-in-out;
+  }
+  .stackcard:nth-child(7):hover{
+    margin: 10px;
+    margin-top: 360px;
+}
+
+  .stackcard:nth-child(8){
+    margin: 10px;
+    margin-top: 500px;
+    transition: all 250ms ease-in-out;
+  }
+
+.stackcard:nth-child(8):hover{
+    margin: 10px;
+    margin-top: 430px;
+}
+
+  .stackcard:nth-child(9){
+    margin: 10px;
+    margin-top: 570px;
+    transition: all 250ms ease-in-out;
+  }
+
+.stackcard:nth-child(9):hover{
+    margin: 10px;
+    margin-top: 500px;
+}
+
+  .stackcard:nth-child(10){
+    margin: 10px;
+    margin-top: 640px;
+    transition: all 250ms ease-in-out;
+  }
+
+.stackcard:nth-child(10):hover{
+    margin: 10px;
+    margin-top: 570px;
+}
